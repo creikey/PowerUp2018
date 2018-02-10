@@ -1,35 +1,34 @@
 package org.ljrobotics.frc2018.commands;
 
-import org.ljrobotics.frc2018.paths.bottom.BottomRightSwitch;
-import org.ljrobotics.frc2018.paths.middle.MiddleRightSwitch;
-import org.ljrobotics.frc2018.paths.top.TopRightSwitch;
+import org.ljrobotics.frc2018.paths.bottom.BottomRightScale;
+import org.ljrobotics.frc2018.paths.middle.MiddleRightScale;
+import org.ljrobotics.frc2018.paths.top.TopRightScale;
 import org.ljrobotics.lib.util.RobotPosition;
 import org.ljrobotics.lib.util.control.PathContainer;
 
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
-public class RightSwitchCommand extends CommandGroup{
+public class RightScaleCommand extends CommandGroup {
 
-	public RightSwitchCommand(RobotPosition p) {
+	public RightScaleCommand(RobotPosition p) {
 		PathContainer path;
-		Command turn = new TurnToAngle(0);
+		Command turn = new TurnToAngle(-90);
 		switch(p) {
 		case BOTTOM:
-			path = new BottomRightSwitch();
+			path = new BottomRightScale();
 			break;
 		case MIDDLE:
-			path = new MiddleRightSwitch();
+			path = new MiddleRightScale();
 			break;
 		case TOP:
-			path = new TopRightSwitch();
+			path = new TopRightScale();
 			break;
 		default:
 				path = null;
 		}
 		this.addSequential(new ResetToPathHead(path));
 		this.addSequential(new FollowPath(path));
-		// this.addSequential(new DriveForward(0.2, 1));
 		this.addSequential(turn);
 	}
 	

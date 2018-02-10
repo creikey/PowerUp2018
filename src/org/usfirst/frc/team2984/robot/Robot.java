@@ -17,6 +17,7 @@ import org.ljrobotics.lib.util.CrashTracker;
 import org.ljrobotics.lib.util.GameData;
 import org.ljrobotics.lib.util.IncorrectGameData;
 import org.ljrobotics.lib.util.PaddleSide;
+import org.ljrobotics.lib.util.RobotPosition;
 import org.ljrobotics.lib.util.math.RigidTransform2d;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -137,9 +138,11 @@ public class Robot extends IterativeRobot {
 			try {
 				gd = new GameData();
 				if (gd.GetPaddleSide(0) == PaddleSide.LEFT) {
-					command = new LeftScaleCommand();
+					// command = new LeftScaleCommand();
+					command = new LeftScaleCommand(RobotPosition.MIDDLE);
 				} else if (gd.GetPaddleSide(0) == PaddleSide.RIGHT) {
-					command = new RightSwitchCommand();
+					// command = new RightSwitchCommand();
+					command = new RightSwitchCommand(RobotPosition.MIDDLE);
 				}
 			} catch (IncorrectGameData e) {
 				System.out.println(e.getErrorData());

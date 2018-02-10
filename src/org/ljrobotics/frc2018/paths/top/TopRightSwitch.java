@@ -1,4 +1,4 @@
-﻿package org.ljrobotics.frc2018.paths.bottom;
+﻿package org.ljrobotics.frc2018.paths.top;
 
 import java.util.ArrayList;
 
@@ -10,29 +10,29 @@ import org.ljrobotics.lib.util.math.RigidTransform2d;
 import org.ljrobotics.lib.util.math.Rotation2d;
 import org.ljrobotics.lib.util.math.Translation2d;
 
-public class RightScale implements PathContainer {
+public class TopRightSwitch implements PathContainer {
 
     @Override
     public Path buildPath() {
         ArrayList<Waypoint> sWaypoints = new ArrayList<Waypoint>();
-        sWaypoints.add(new Waypoint(0,70,0,60));
-        sWaypoints.add(new Waypoint(40,70,20,60));
-        sWaypoints.add(new Waypoint(80,60,10,60));
-        sWaypoints.add(new Waypoint(325,60,0,60));
+        sWaypoints.add(new Waypoint(20,250,0,30));
+        sWaypoints.add(new Waypoint(50,250,20,30));
+        sWaypoints.add(new Waypoint(80,110,10,30));
+        sWaypoints.add(new Waypoint(140,110,0,60));
 
         return PathBuilder.buildPathFromWaypoints(sWaypoints);
     }
 
     @Override
     public RigidTransform2d getStartPose() {
-        return new RigidTransform2d(new Translation2d(0, 70), Rotation2d.fromDegrees(180.0));
+        return new RigidTransform2d(new Translation2d(20, 250), Rotation2d.fromDegrees(180.0));
     }
 
     @Override
     public boolean isReversed() {
         return false;
     }
-	// WAYPOINT_DATA: [{"position":{"x":0,"y":70},"speed":60,"radius":0,"comment":""},{"position":{"x":40,"y":70},"speed":60,"radius":20,"comment":""},{"position":{"x":80,"y":60},"speed":60,"radius":10,"comment":""},{"position":{"x":325,"y":60},"speed":60,"radius":0,"comment":""}]
+	// WAYPOINT_DATA: [{"position":{"x":20,"y":250},"speed":30,"radius":20,"comment":""},{"position":{"x":50,"y":250},"speed":30,"radius":20,"comment":""},{"position":{"x":50,"y":220},"speed":30,"radius":20,"comment":""},{"position":{"x":130,"y":220},"speed":60,"radius":0,"comment":""}]
 	// IS_REVERSED: false
-	// FILE_NAME: RightScale
+	// FILE_NAME: Top Left Switch
 }

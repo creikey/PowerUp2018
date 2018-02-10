@@ -1,6 +1,6 @@
 package org.ljrobotics.frc2018.commands;
 
-import org.ljrobotics.frc2018.paths.ShortLeftSwitch;
+import org.ljrobotics.frc2018.paths.middle.ShortLeftSwitch;
 import org.ljrobotics.lib.util.control.PathContainer;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;

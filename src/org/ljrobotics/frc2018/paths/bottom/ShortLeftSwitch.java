@@ -1,4 +1,4 @@
-package org.ljrobotics.frc2018.paths;
+﻿package org.ljrobotics.frc2018.paths.bottom;
 
 import java.util.ArrayList;
 
@@ -15,25 +15,24 @@ public class ShortLeftSwitch implements PathContainer {
     @Override
     public Path buildPath() {
         ArrayList<Waypoint> sWaypoints = new ArrayList<Waypoint>();
-        sWaypoints.add(new Waypoint(20,150,0,0));
-        sWaypoints.add(new Waypoint(35,150,10,40));
-        sWaypoints.add(new Waypoint(80,220,10,40));
-        sWaypoints.add(new Waypoint(100,220,0,20));
-        sWaypoints.add(new Waypoint(113,220,0,20));
+        sWaypoints.add(new Waypoint(0,70,0,60));
+        sWaypoints.add(new Waypoint(40,70,20,60));
+        sWaypoints.add(new Waypoint(80,220,10,60));
+        sWaypoints.add(new Waypoint(140,220,0,60));
 
         return PathBuilder.buildPathFromWaypoints(sWaypoints);
     }
 
     @Override
     public RigidTransform2d getStartPose() {
-        return new RigidTransform2d(new Translation2d(20, 150), Rotation2d.fromDegrees(0.0));
+        return new RigidTransform2d(new Translation2d(0, 70), Rotation2d.fromDegrees(180.0));
     }
 
     @Override
     public boolean isReversed() {
         return false;
     }
-	// WAYPOINT_DATA: [{"position":{"x":20,"y":250},"speed":0,"radius":0,"comment":""},{"position":{"x":35,"y":250},"speed":30,"radius":10,"comment":""},{"position":{"x":80,"y":220},"speed":40,"radius":20,"comment":""},{"position":{"x":105,"y":220},"speed":30,"radius":0,"comment":""},{"position":{"x":113,"y":220},"speed":203,"radius":0,"comment":""}]
+	// WAYPOINT_DATA: [{"position":{"x":0,"y":70},"speed":60,"radius":0,"comment":""},{"position":{"x":40,"y":70},"speed":60,"radius":20,"comment":""},{"position":{"x":80,"y":220},"speed":60,"radius":10,"comment":""},{"position":{"x":140,"y":220},"speed":60,"radius":0,"comment":""}]
 	// IS_REVERSED: false
-	// FILE_NAME: UntitledPath
+	// FILE_NAME: ShortRightSwitch
 }

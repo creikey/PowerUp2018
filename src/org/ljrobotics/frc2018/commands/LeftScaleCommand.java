@@ -12,6 +12,11 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 
 public class LeftScaleCommand extends CommandGroup{
 
+	/**
+	 * Create a new command group that goes to the left scale
+	 * @param p
+	 * 		p is the robots position, bottom, middle, or top
+	 */
 	public LeftScaleCommand(RobotPosition p) {
 		PathContainer path;
 		Command turn = new TurnToAngle(90);

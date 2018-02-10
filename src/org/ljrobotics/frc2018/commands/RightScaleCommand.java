@@ -11,6 +11,11 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 
 public class RightScaleCommand extends CommandGroup {
 
+	/**
+	 * Create a new command group that goes to the right scale
+	 * @param p
+	 * 		p is the robots position, bottom, middle, or top
+	 */
 	public RightScaleCommand(RobotPosition p) {
 		PathContainer path;
 		Command turn = new TurnToAngle(-90);

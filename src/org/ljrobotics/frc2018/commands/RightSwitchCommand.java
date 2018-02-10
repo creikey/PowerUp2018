@@ -11,6 +11,11 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 
 public class RightSwitchCommand extends CommandGroup{
 
+	/**
+	 * Create a new command group that goes to the right switch
+	 * @param p
+	 * 		p is the robots position, bottom, middle, or top
+	 */
 	public RightSwitchCommand(RobotPosition p) {
 		PathContainer path;
 		Command turn = new TurnToAngle(0);
